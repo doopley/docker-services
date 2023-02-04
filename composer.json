@@ -1,0 +1,6 @@
+{
+    "name": "pyorteam/docker-services",
+    "type": "project",
+    "description": "Docker services for development and testing",
+    "license": "LGPL-3.0-or-later"
+}
