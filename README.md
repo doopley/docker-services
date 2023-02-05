@@ -16,19 +16,34 @@
 
 ## 2. How to use
 
-### 2.1 Configure the environment
+## 2.1 Init configuration
+Copy the example configuration file to the corresponding configuration file, and modify it as needed.
+
+```bash
+cp services/redis/redis.conf.example services/redis/redis.conf
+cp services/phpmyadmin/config.user.inc.php.example services/phpmyadmin/config.user.inc.php
+cp services/phpmyadmin/php-phpmyadmin.ini.example services/phpmyadmin/php-phpmyadmin.ini
+cp services/php81/php.ini.example services/php81/php.ini
+cp services/php81/php-fpm.conf.example services/php81/php-fpm.conf
+cp services/nginx/fastcgi_params.example services/nginx/fastcgi_params
+cp services/nginx/fastcgi-php.conf.example services/nginx/fastcgi-php.conf
+cp services/nginx/conf.d/localhost.conf.example services/nginx/conf.d/localhost.conf
+cp services/mysql/mysql.cnf.example services/mysql/mysql.cnf
+```
+
+### 2.2 Configure the environment
 The environment configuration file is `.env`, which is a copy of the `env.example` file, copy it to `.env` and modify it as needed.
 ```bash
 cp .env.example .env
 ```
 
-### 2.2 Configure docker-compose.yml
+### 2.3 Configure docker-compose.yml
 The docker-compose.yml file is a copy of the docker-compose.yml.example file, wich is a copy of the docker-compose.yml.example file, copy it to docker-compose.yml and modify it as needed.
 ```bash
 cp docker-compose.yml.example docker-compose.yml
 ```
 
-### 2.3 Start the service
+### 2.4 Start the service
 ```bash
 docker-compose up -d
 ```
