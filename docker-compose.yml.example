@@ -47,6 +47,32 @@ services:
     networks:
       - default
 
+  postgres:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: postgres
+    environment:
+        POSTGRES_DB: ${POSTGRES_DB}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ${DATA_DIR}/postgres:/var/lib/postgres/data/:rw
+    ports:
+      - ${POSTGRES_HOST_PORT}:5432
+    networks:
+      - default
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - ${PGADMIN_HOST_PORT}:80
+    networks:
+      - default
+
   mysql:
     image: mysql/mysql-server:${MYSQL_VERSION}
     container_name: mysql
@@ -115,4 +141,4 @@ services:
       - redis
 
 volumes:
-  persistent:
+    persistent:

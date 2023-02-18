@@ -3,11 +3,15 @@
     ├── data
     │   ├── mysql
     │   └── redis
+    │   └── postgres
     ├── services
     │   ├── nginxs
+    │   ├── postgres
+    │   ├── pgadmin
     │   ├── mysql
     │   ├── phpmyadmin
     │   └── redis
+    │   └── phpredisadmin
     ├── logs
     │   ├── mysql
     ├── docker-compose.example.yml
@@ -57,21 +61,32 @@ The port address of the phpMyAdmin container mapped to the host is: `8080`, so t
 
 Information MySQL connection:
 
-* host: (MySQL container network for this project)
+* host: (MySQL container network)
 * port：`3306`
 * username:(Manually entered in the phpmyadmin interface)
 * password:(Manually entered in the phpmyadmin interface)
 
-### 3.2 phpRedisAdmin
+### 3.2 PgAdmin
+The port address of the pgAdmin container mapped to the host is: `5050`, so to access on the host, use the address: "localhost:5050".
+
+    http://localhost:5050
+
+Information Postgres connection:
+
+* host: (Postgres container network)
+* port：`5432`
+* username:(Manually entered in the pgAdmin interface)
+* password:(Manually entered in the pgAdmin interface)
+
+### 3.3 phpRedisAdmin
 The port address of the phpRedisAdmin container mapped to the host is: `8081`, so to access on the host, use the address: 
 
     http://localhost:8081
 
 The Redis connection information is as follows:
 
-*   host: (Redis Container Network for this project)
+*   host: (Redis Container Network)
 *   port: `6379`
-
 
 ## 4. Administrative commands
 
@@ -108,15 +123,15 @@ Output `NAMES` that column is the name of the container, or if the default confi
 Then, open `~/.bashrc` or `~/.zshrc` file, plus:
 
 ```bash
-alias dnginx='docker exec -it nginx /bin/sh'
-alias dmysql='docker exec -it mysql /bin/bash'
-alias dredis='docker exec -it redis /bin/sh'
+alias snginx='docker exec -it nginx /bin/sh'
+alias smysql='docker exec -it mysql /bin/bash'
+alias sredis='docker exec -it redis /bin/sh'
 ```
 
 The next time you enter the container, it is very fast, such as entering the php container:
 
 ```bash
-$ dnginx
+$ snginx
 ```
 
 ## 5. Use Log
