@@ -20,7 +20,7 @@
 
 ## 2. How to use
 
-## 2.1 Initialization
+### 2.1 Initialization
 Copy the example configuration files and modify them as needed.
 
 ```bash
