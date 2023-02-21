@@ -1,23 +1,22 @@
 
 ## 1. Directory structure
-├── data
-│   ├── mysql
-│   ├── postgres
-│   └── redis
-├── logs
-│   └── nginx
-├── services
-│   ├── mysql
-│   ├── nginx
-│   ├── pgadmin
-│   ├── php81
-│   ├── phpmyadmin
-│   ├── postgres
-│   ├── redis
-│   └── phpredisadmin
-├── .env.example
-├── docker-compose.yml.example
-└── www
+    ├── data
+    │   ├── mysql
+    │   └── redis
+    │   └── postgres
+    ├── services
+    │   ├── nginxs
+    │   ├── postgres
+    │   ├── pgadmin
+    │   ├── mysql
+    │   ├── phpmyadmin
+    │   └── redis
+    │   └── phpredisadmin
+    ├── logs
+    │   ├── mysql
+    ├── docker-compose.example.yml
+    ├── env.example
+    └── www
 
 ## 2. How to use
 
